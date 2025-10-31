@@ -1,0 +1,15 @@
+# netlify.toml
+[build]
+  base    = "portfolio"              # <— your frontend lives in /portfolio
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  VITE_API_URL = "https://amitpatil-ai-backend.onrender.com"  # <— your Render URL
+
+# SPA routing (so refresh on deep routes works)
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200
