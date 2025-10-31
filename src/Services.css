@@ -1,0 +1,31 @@
+.img #image{
+    height: 300px;
+    width: 330px;
+    border-radius: 10%;
+     display: flex;
+     flex-wrap: wrap; 
+     justify-content: center; 
+     gap: 20px;
+}
+.service_container{
+    display: flex;
+    gap: 50px;
+}
+.service_container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  justify-items: center;
+}
+
+.img{
+  width: 100%;
+  max-width: 330px;
+}
+
+.img #image{
+  width: 100%;
+  height: 300px;
+  border-radius: 10%;
+  object-fit: contain;
+}

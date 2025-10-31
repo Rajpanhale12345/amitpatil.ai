@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Birthstone+Variable:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "Mileast";
+  src: url("/fonts/Mileast-Regular.woff2") format("woff2"),
+       url("/fonts/Mileast-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mileast";
+  src: url("/fonts/Mileast-Italic.woff2") format("woff2"),
+       url("/fonts/Mileast-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+.name{
+    font-family: "Garamond", serif;
+}
