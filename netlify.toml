@@ -1,14 +1,22 @@
 # netlify.toml
 [build]
-  base    = "portfolio"              # <— your frontend lives in /portfolio
-  command = "npm ci && npm run build"
+  base    = "portfolio"
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
-  VITE_API_URL = "https://amitpatil-ai-backend.onrender.com"  # <— your Render URL
+  NODE_VERSION = "18.20.3"
+  # If you switch to direct API calls, you can keep this:
+  # VITE_API_URL = "https://amitpatil-ai-backend.onrender.com"
 
-# SPA routing (so refresh on deep routes works)
+# Proxy API calls to Render (avoids CORS)
+[[redirects]]
+  from = "/api/*"
+  to   = "https://amitpatil-ai-backend.onrender.com/:splat"
+  status = 200
+  force = true
+
+# SPA fallback so refresh/deep links work
 [[redirects]]
   from = "/*"
   to   = "/index.html"
