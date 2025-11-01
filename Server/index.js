@@ -37,15 +37,9 @@ app.use(express.json());
 
 // ---- Root & Health ----
 app.get("/", (_req, res) => res.send("API running ✅"));
-app.get("/api/health", async (_req, res) => {
-  try {
-    const [rows] = await db.query("SELECT 1 AS ok");
-    res.json({ ok: true, db: rows[0]?.ok === 1 });
-  } catch (e) {
-    res.status(500).json({ ok: false, db: false, error: e.message });
-  }
+app.get('/health', (req, res) => {
+  res.status(200).json({ ok: true });
 });
-
 // ---- Routes ----
 app.use("/profile", profileRoutes);
 app.use("/clients", clientRoutes);
